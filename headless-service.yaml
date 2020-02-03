@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: headless-service
 spec:
+  clusterIP: ""
   type: NodePort
   ports:
   - port: 80
