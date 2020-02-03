@@ -9,6 +9,4 @@ spec:
     targetPort: 8080
   selector:
     matchLabels:
-    - key: app
-      operator: In
-      value: kubia
+    kubia: app
