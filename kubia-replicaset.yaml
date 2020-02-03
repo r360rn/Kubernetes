@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: kubia-rs
   labels:
-  - app: kubia
+    app: kubia
 spec:
   replicas: 5
   selector:
