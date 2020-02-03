@@ -12,6 +12,10 @@ spec:
       operator: In
       value: kubia
   template:
+    metadata:
+      name: kubia-pod
+      labels:
+        app: kubia
     spec:
       containers:
         - name: kubia
