@@ -22,3 +22,5 @@ spec:
             httpGet:
               path: \
               port: 80
+          readinessProbe:
+            
