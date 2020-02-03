@@ -2,15 +2,11 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: kubia-rs
-  labels:
-    app: kubia
 spec:
   replicas: 5
   selector:
     matchLabels:
-      key: app
-      operator: In
-      value: kubia
+      app: kubia
   template:
     metadata:
       name: kubia-pod
