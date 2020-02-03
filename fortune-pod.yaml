@@ -20,5 +20,7 @@ spec:
       protocol: TCP
   volumes:
   - name: html
-    emptyDir:
-      medium: Memory
+    gitRepo:
+      repository: https://github.com/r360rn/kubia-website-example.git
+      revision: master
+      directory: .
