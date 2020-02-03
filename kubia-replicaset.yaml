@@ -7,7 +7,10 @@ metadata:
 spec:
   replicas: 5
   selector:
-    app: kubia
+  - matchLabels:
+      key: app
+      operator: In
+      value: kubia
   template:
     spec:
       containers:
