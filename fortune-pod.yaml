@@ -18,6 +18,8 @@ spec:
     ports:
     - containerPort: 80
       protocol: TCP
+    args:
+    - "10"
   volumes:
   - name: html
     gitRepo:
