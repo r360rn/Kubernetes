@@ -7,7 +7,7 @@ spec:
   - name: main
     image: busybox
     command: ["sleep 9999"]
-    resurces:
+    resources:
       requests:
         cpu: 15m
         memory: 100Ki
