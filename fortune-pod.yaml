@@ -13,9 +13,9 @@ spec:
     - "10"
     env:
     - name: FIRST_VAR
-      value: foo
+      value: 1
     - name: SECOND_VAR
-      value: $(FIRST_VAR)bar
+      value: $((FIRST_VAR+1))
   - image: nginx:alpine
     name: web-server
     volumeMounts:
