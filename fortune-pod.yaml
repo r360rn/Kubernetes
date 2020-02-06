@@ -39,4 +39,4 @@ spec:
       name: fortune-config
       items:
       - key: my-nginx-config.conf
-        path: /etc/nginx/conf.d/gzip.conf
+        path: gzip.conf
