@@ -46,4 +46,4 @@ spec:
         path: gzip.conf
   - name: certs
     secret:
-        name: fortune-secret
+      secretName: fortune-secret
