@@ -15,7 +15,7 @@ spec:
     - name: FIRST_VAR
       value: foo
     - name: SECOND_VAR
-      value: $FIRST_VAR)bar
+      value: $(FIRST_VAR)bar
   - image: nginx:alpine
     name: web-server
     volumeMounts:
