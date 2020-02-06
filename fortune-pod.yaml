@@ -4,23 +4,25 @@ metadata:
   name: fortune
 spec:
   containers:
-  - image: luksa/fortune
+  - image: luksa/fortune:args
     name: html-generator
+    env:
+    - name: INTERVAL
+      valueFrom:
+        configMapKeyRef:
+          name: fortune-config
+          key: sleep-interval
     volumeMounts:
     - name: html
       mountPath: /var/htdocs
-    args:
-    - "10"
-    env:
-    - name: FIRST_VAR
-      value: 1
-    - name: SECOND_VAR
-      value: $((FIRST_VAR+1))
   - image: nginx:alpine
     name: web-server
     volumeMounts:
     - name: html
       mountPath: /usr/share/nginx/html
+      readOnly: true
+    - name: config
+      mountPath: /etc/nginx/conf.d
       readOnly: true
     ports:
     - containerPort: 80
@@ -31,3 +33,6 @@ spec:
       repository: https://github.com/r360rn/kubia-website-example.git
       revision: master
       directory: .
+  - name: config
+    configMap:
+      name: fortune
