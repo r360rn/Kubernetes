@@ -8,7 +8,7 @@ spec:
     image: nginx:alpine
     volumeMounts:
     - name: config
-      path: /etc/nginx/conf.d/
+      mountPath: /etc/nginx/conf.d/
       readOnly: true
     livenessProbe:
       httpGet:
