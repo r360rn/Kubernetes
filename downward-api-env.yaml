@@ -24,13 +24,13 @@ spec:
       items:
       - path: "podName"
         fieldRef:
-        fieldPat  h: metadata.name
+        fieldPath: metadata.name
       - path: "podNamespace"
         fieldRef:
-        fieldPa th: metadata.namespace
+        fieldPath: metadata.namespace
       - path: "labels"
         fieldRef:
-        fieldPat  h: metadata.labels
+        fieldPath: metadata.labels
       - path: "annotations"
         fieldRef:
         fieldPath:  metadata.annotations
