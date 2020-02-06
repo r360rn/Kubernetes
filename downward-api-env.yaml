@@ -34,7 +34,7 @@ spec:
     - name: SERVICE_ACCOUNT
       valueFrom:
         fieldRef:
-          fieldPath: spec.serviceAccount
+          fieldPath: spec.serviceAccountName
     - name: CONTAINER_CPU_REQUEST_MILLICORES
       valueFrom:
         resourceFieldRef:
