@@ -36,4 +36,4 @@ spec:
       directory: .
   - name: config
     configMap:
-      name: fortune
+      name: fortune-config
