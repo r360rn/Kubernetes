@@ -9,6 +9,13 @@ spec:
     volumeMounts:
     - name: html
       mountPath: /var/htdocs
+    args:
+    - "10"
+    env:
+    - name: FIRST_VAR
+      value: foo
+    - name: SECOND_VAR
+      value: $FIRST_VAR)bar
   - image: nginx:alpine
     name: web-server
     volumeMounts:
@@ -18,8 +25,6 @@ spec:
     ports:
     - containerPort: 80
       protocol: TCP
-    args:
-    - "10"
   volumes:
   - name: html
     gitRepo:
