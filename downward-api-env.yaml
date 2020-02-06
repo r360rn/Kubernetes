@@ -14,34 +14,33 @@ spec:
       limits:
         cpu: 100m
         memory: 100Mi
-    env:
-    - name: POD_NAME
-      valueFrom:
+    volumeMounts:
+    - name: downward
+      mountPath: /etc/downward/
+      readOnly: true
+  volumes:
+  - name: downward
+    downwardAPI:
+      items:
+      - path: "podName"
         fieldRef:
-          fieldPath: metadata.name
-    - name: POD_NAMESPACE
-      valueFrom:
+        fieldPat  h: metadata.name
+      - path: "podNamespace"
         fieldRef:
-          fieldPath: metadata.namespace
-    - name: POD_IP
-      valueFrom:
+        fieldPa th: metadata.namespace
+      - path: "labels"
         fieldRef:
-          fieldPath: status.podIP
-    - name: NODE_NAME
-      valueFrom:
+        fieldPat  h: metadata.labels
+      - path: "annotations"
         fieldRef:
-          fieldPath: spec.nodeName
-    - name: SERVICE_ACCOUNT
-      valueFrom:
-        fieldRef:
-          fieldPath: spec.serviceAccountName
-    - name: CONTAINER_CPU_REQUEST_MILLICORES
-      valueFrom:
+        fieldPath:  metadata.annotations
+      - path: "containerCpuRequestMilliCores"
         resourceFieldRef:
+          containerName: main
           resource: requests.cpu
           divisor: 1m
-    - name: CONTAINER_MEMORY_LIMIT_KIBIBYTES
-      valueFrom:
+      - path: "containerMemoryLimitBytes"
         resourceFieldRef:
+          containerName: main
           resource: limits.memory
-          divisor: 1Ki
+          divisor: 1
