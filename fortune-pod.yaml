@@ -12,6 +12,7 @@ spec:
         configMapKeyRef:
           name: fortune-config
           key: sleep-interval
+    args: ["$(INTERVAL)"]
     volumeMounts:
     - name: html
       mountPath: /var/htdocs
