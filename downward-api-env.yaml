@@ -6,7 +6,7 @@ spec:
   containers:
   - name: main
     image: busybox
-    command: ["sleep 9999"]
+    command: ["sleep", "9999"]
     resources:
       requests:
         cpu: 15m
