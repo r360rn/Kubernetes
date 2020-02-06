@@ -37,9 +37,11 @@ spec:
           fieldPath: spec.serviceAccount
     - name: CONTAINER_CPU_REQUEST_MILLICORES
       valueFrom:
-        resoruceFieldRef: requests.cpu
-        divisor: 1m
+        resoruceFieldRef:
+          resource: requests.cpu
+          divisor: 1m
     - name: CONTAINER_MEMORY_LIMIT_KIBIBYTES
       valueFrom:
-        resourceFieldRef: limits.memory
-        divisor: 1Ki
+        resourceFieldRef:
+          resource: limits.memory
+          divisor: 1Ki
