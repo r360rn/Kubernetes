@@ -9,10 +9,7 @@ spec:
     volumeMounts:
     - name: config
       path: /etc/nginx/conf.d/
-    volumes:
-    - name: config
-      configMap:
-        name: fortune-config
+      readOnly: true
     livenessProbe:
       httpGet:
         path: /
@@ -21,3 +18,7 @@ spec:
       httpGet:
         path: /
         port: 80
+  volumes:
+  - name: config
+    configMap:
+      name: fortune-config
