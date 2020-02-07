@@ -21,7 +21,7 @@ kind: Service
 metadata:
   name: kubia
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: kubia
   ports:
