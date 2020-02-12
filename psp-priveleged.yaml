@@ -1,0 +1,14 @@
+apiVersion: extensions/v1
+kind: PodSecurityPolicy
+metadata:
+  name: priveleged
+spec:
+  priveleged: true
+  runAsUser: RunAsAny
+  fsGroup: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  seLinux:
+    rule: RunAsAny
+  volumes:
+  - "*"
