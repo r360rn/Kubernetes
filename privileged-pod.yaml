@@ -6,6 +6,6 @@ spec:
   containers:
   - name: main
     image: alpine
-    command: ["sleep", "99999"]
+    command: ["/bin/sleep", "99999"]
     securityContext:
       privileged: true
